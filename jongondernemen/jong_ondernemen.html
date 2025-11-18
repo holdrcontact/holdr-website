@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Holdr</title>
+<!-- Link naar extern CSS-bestand -->
+<link rel="stylesheet" href="jong_ondernemen.css">
+</head>
+<body>
+<header class="hero">
+<div class="container">
+<h1 id="product-name">Holdr </h1>
+<p class="tagline">Modern haakje voor aan je fiets — handig voor tassen en boodschappentassen.</p>
+<div class="cta-row">
+<a class="btn outline" href="meer_info.html">Meer info</a>
+</div>
+</div>
+<header class="logo-header">
+  <img src="Image.jpg" alt="Holdr" class="logo">
+
+
+<main class="container content">
+<section class="features">
+<h2>Waarom Holdr?</h2>
+<ul>
+<li>Stevig en lichtgewicht</li>
+<li>Makkelijk te bevestigen aan rem-, bagagedrager- of zadelstang</li>
+<li>Ontworpen voor jongeren en volwassenen die veel fietsen</li>
+</ul>
+</section>
+
+
+<section class="how">
+<h2>Hoe te gebruiken</h2>
+<ol>
+<li>Hang het haakje aan de fietsstang.</li>
+<li>Hang je tas of boodschappentas aan het haakje.</li>
+<li>Rij veilig — gewicht is gebalanceerd.</li>
+</ol>
+</section>
+
+
+<section id="betaal" class="purchase">
+Vul <a class="btn primary" href="bestellen.html">hier</a> je gegevens in
+
+
+<script>
+const unitPrice = 5; // --> PAS AAN NAAR JOUW PRIJS
+const qtyInput = document.getElementById('qty');
+const totalPriceEl = document.getElementById('total-price');
+const unitPriceEl = document.getElementById('unit-price');
+const payLink = document.getElementById('pay-link');
+
+
+unitPriceEl.textContent = `€ ${unitPrice.toFixed(2)}`;
+
+
+function updateTotal(){
+const qty = parseInt(qtyInput.value) || 1;
+const total = unitPrice * qty;
+totalPriceEl.textContent = `€ ${total.toFixed(2)}`;
+
+
+// Voorbeeld voor Tikkie of iDEAL link met bedrag:
+// Vervang de URL hieronder door jouw basis-betaalverzoek.
+// Sommige diensten laten je `amount` meesturen in de URL.
+payLink.href = `https://tikkie.me/pay/VOORBEELD?amount=${total.toFixed(2)}`;
+}
+
+
+qtyInput.addEventListener('input', updateTotal);
+updateTotal();
+</script>
+</section>
+</main>
+
+
+<footer class="footer">
+<div class="container">
+<p>© <span id="year">2025</span> Twist and go  — Alle rechten voorbehouden</p>
+</div>
+</footer>
+</body>
+</html>
